@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         peopleTableView.dataSource = self
         
         dataController.delegate = self
+        
+        dataController.requestData(fileName: "people.json")
     }
 
 
@@ -43,7 +45,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let peopleCell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath) as! PeopleTableViewCell
+        let person = listOfPeople[indexPath.row]
+        
+        peopleCell.bind(person: person)
+        
+        return peopleCell
     }
     
     

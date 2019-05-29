@@ -18,17 +18,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-eY-6tp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-eY-6tp">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nmc-q6-lDV">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="peopleCell" rowHeight="108" id="nmc-q6-lDV" customClass="PeopleTableViewCell" customModule="iOS_MVCAndLocalData" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nmc-q6-lDV" id="meG-Ry-oQ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-x6-5rg">
+                                                    <rect key="frame" x="15" y="11" width="57" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="n3x-fb-KUq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-nS-nk0">
+                                                    <rect key="frame" x="15" y="43" width="88.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="5kq-Xz-ePe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcC-7S-6Nh">
+                                                    <rect key="frame" x="15" y="72" width="63" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="G8O-NP-8d2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BcC-7S-6Nh" secondAttribute="trailing" constant="20" symbolic="YES" id="0u7-7F-Ftg"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Iec-x6-5rg" secondAttribute="trailing" constant="20" symbolic="YES" id="AI0-EH-HQi"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6kl-nS-nk0" secondAttribute="trailing" constant="20" symbolic="YES" id="BSr-6H-SNd"/>
+                                                <constraint firstItem="Iec-x6-5rg" firstAttribute="leading" secondItem="meG-Ry-oQ5" secondAttribute="leading" constant="15" id="Dny-hw-lB9"/>
+                                                <constraint firstAttribute="bottom" secondItem="BcC-7S-6Nh" secondAttribute="bottom" constant="14.5" id="bbV-Xo-p73"/>
+                                                <constraint firstItem="6kl-nS-nk0" firstAttribute="leading" secondItem="meG-Ry-oQ5" secondAttribute="leading" constant="15" id="j3P-Iv-CoJ"/>
+                                                <constraint firstItem="Iec-x6-5rg" firstAttribute="top" secondItem="meG-Ry-oQ5" secondAttribute="top" constant="11" id="kdy-Wo-IQP"/>
+                                                <constraint firstItem="6kl-nS-nk0" firstAttribute="top" secondItem="meG-Ry-oQ5" secondAttribute="top" constant="43" id="pqN-0l-svX"/>
+                                                <constraint firstItem="BcC-7S-6Nh" firstAttribute="leading" secondItem="meG-Ry-oQ5" secondAttribute="leading" constant="15" id="yPo-Gh-d2C"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="BcC-7S-6Nh" id="AZl-HU-hU9"/>
+                                            <outlet property="nameLabel" destination="Iec-x6-5rg" id="CeM-KS-kEx"/>
+                                            <outlet property="occupationLabel" destination="6kl-nS-nk0" id="Hrx-IC-F5A"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
