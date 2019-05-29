@@ -11,6 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var peopleTableView: UITableView!
+    private let dataController = DataController()
+    
+    fileprivate var listOfPeople = [Person](){
+        didSet{
+            self.peopleTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +28,8 @@ class ViewController: UIViewController {
     private func initialize(){
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
+        
+        dataController.delegate = self
     }
 
 
@@ -29,7 +39,7 @@ class ViewController: UIViewController {
 //Create extension to conform delegate
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return listOfPeople.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,4 +47,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     
+}
+
+extension ViewController: DataControllerDelegate{
+    func didReceivedPeople(people: [Person]) {
+        self.listOfPeople = people
+    }
 }
