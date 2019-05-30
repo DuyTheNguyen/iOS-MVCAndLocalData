@@ -23,9 +23,8 @@ class DataController{
         if loadFile(copyFileToPath: copyFileToPath) {
             let url = URL(fileURLWithPath: copyFileToPath)
             let jsonData = try! Data(contentsOf: url)
-            var peopleList = [Person]()
             
-            peopleList = try!JSONDecoder().decode([Person].self, from: jsonData)
+            let peopleList = try!JSONDecoder().decode([Person].self, from: jsonData)
             
             //Pass data to delegate
             self.delegate?.didReceivedPeople(people: peopleList)
